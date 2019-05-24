@@ -1,0 +1,45 @@
+tet
+[0] ....
+[1] .##.
+[2] ##..
+[3] ....
+[4] NULL
+
+struct s_list
+{
+    char **tet;
+    t_list *next;
+}    t_list;
+
+char ***tets;
+tets[tetromino number][tetromino line][tetromino character place]
+tets[0]
+tet
+[0] ....
+[1] .##.
+[2] ##..
+[3] ....
+[4] NULL
+tets[1]
+tet
+
+while(tets[++i])
+    ft_memdel(tets[i]);
+free(tets);
+
+char (char ***)malloc(sizeof(char **) * tet_count);
+
+....####........
+
+while (i < 16)
+{
+    tetrimino[j] = ft_strnew(4);
+    ft_memcpy(tetrimino[++j], s + i, 4);
+    i += 4;
+}
+return(tetrimino)
+
+
+somewhere outside the above where the function above gets called
+
+tets[j] = tetrimino;
