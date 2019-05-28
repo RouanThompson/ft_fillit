@@ -5,47 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 14:58:24 by rothomps          #+#    #+#             */
-/*   Updated: 2019/05/23 14:58:25 by rothomps         ###   ########.fr       */
+/*   Created: 2019/05/27 18:21:34 by rothomps          #+#    #+#             */
+/*   Updated: 2019/05/27 18:21:35 by rothomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char    **place(char **new_board, char ***tets, int size)
+void    place(char **board, char **tetriminos)
 {
-    int n;
-    int l;
-    int c;
-    int z;
-    int i;
-    int j;
-
+    int     i;
+    int     j;
+    int     l;
+    int     c;
+    
     i = 0;
     j = 0;
-    n = 0;
     l = 0;
     c = 0;
-    z = 0;
 
-    while (new_board[i] != NULL)
+    while (board[i] != NULL)
     {
-        while(new_board[i][j] != '\0')
+        while (board[i][j] != '\0')
         {
-            if (tets[n][l][c] == '.')
+            if (tetriminos[l][c] != '\0' && tetriminos[l][c] == '.')
                 c++;
             else
-            {
-                new_board[i][j] = tets[n][l][c];
-                j++;
-                c++;
-            }
+                board[i][j++] = tetriminos[l][c++];
         }
-        l++;
-        if (tets[n][l] == NULL)
-            n++;
+        i++;
+        j = 0;
     }
-    while (z < size) //take out before submission...i have it here for easy manipulation
-		ft_putendl(new_board[z++]);
-    return(new_board);
 }

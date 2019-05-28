@@ -20,11 +20,10 @@ int main(int c, char **v)
 	char	buff[BUFF_SIZE_F + 1]; //correct declaration to have 21 elements including \0
 	int		bytes_read;
 	int		fd = 0;
-	int		i = 0; //using for # of tetrimoino
-	int		z = 0;
-	char	***treed; //saved tet peices in a double array
-	char	**new_board; //just the board filled with dots nothing else atm
 	int		l = 0;
+	int		i = 0; //using for # of tetrimoino
+	char	**twod; //saved tet peices in a double array
+	char	**new_board; //just the board filled with dots nothing else atm
 
 	if (c == 2)
 	{
@@ -70,17 +69,15 @@ int main(int c, char **v)
 		return (-1);
 	}
 	close(fd);
-	//printf("before ss3\n");
-	treed = mk_3d(mk_2d(i, v[1]), i);
-	//printf("after ss3\n");
-	/*while (z < i)
-	{
-		while (l < 4)
-			ft_putendl(k[z][l++]);
-		l = 0;
-		write(1, "\n",1);
-		z++;
-	}*/
-	new_board = board(i, treed);
+	twod = mk_2d(i, v[1]);
+	ft_putendl("--- Given Tetrimino");
+	while (l < i)
+		ft_putendl(twod[l++]);
+	new_board = board(i);
+	place(new_board, twod);
+	l = 0;
+	ft_putendl("--- Da La board");
+	while (new_board[l] != NULL)
+		ft_putendl(new_board[l++]);
 	return (0);
 }

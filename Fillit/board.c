@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-char    **board(int ntet, char ***tets)
+char    **board(int ntet)
 {
     char    **array;
     int     i;
@@ -33,9 +33,10 @@ char    **board(int ntet, char ***tets)
         array[i] = ft_memset(array[i], '.', (sizeof(char) * size));
 		i++;
 	}
+    ft_putendl("--- Empty Board");
     while (z < size) //printiing out the dimensions..take out before submission...i have it here for easy manipulation
 		ft_putendl(array[z++]);
-    return(place(array, tets, size));
+    return(array);
 }
 //board size value would be used twice so sqr(1 tet * 4)
 //would be 2 so a 2 x 2 board

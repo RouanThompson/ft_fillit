@@ -32,8 +32,7 @@ int					chk_sym(char *s);
 int 				chk_cnect(char *s); 
 char				**mk_2d(int ntet, char *s);
 void        		sve_tet(char **array, char *s);
-char				**board(int ntet, char ***tets);
-char				***mk_3d(char **array, int ntet);
-char				**place(char **board, char ***tets, int size);
+char				**board(int ntet);
+void				place(char **board, char **tetriminos);
 
 #endif

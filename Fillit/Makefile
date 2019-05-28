@@ -24,7 +24,7 @@ LIBFT = libft
 
 LIB = libft.a
 
-SRC = chk_sym.c chk_cnect.c main.c mk_2d.c sve_tet.c mk_3d.c board.c
+SRC = chk_sym.c chk_cnect.c main.c mk_2d.c sve_tet.c board.c place.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -42,5 +42,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+	rm -f $(OBJ)
 
 .PHONY: exe all clean fclean re norm
